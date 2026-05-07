@@ -40,7 +40,7 @@ Demo Class: ${DemoClass}
     res.send("Your Form is Successfully Submited");
   } catch (error) {
     console.log(error);
-    res.status(500).send("Error Sending Email");
+    res.send("Error Sending Email");
   }
 });
 
