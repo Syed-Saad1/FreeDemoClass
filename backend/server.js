@@ -6,17 +6,14 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 
 const app = express();
-
 app.use(
   cors({
-    origin: "https://free-demo-class.vercel.app",
+    origin: ["http://localhost:5173", "https://free-demo-class.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true,
   }),
 );
 app.use(express.json());
-
-app.options("*", cors());
 
 app.get("/", (req, res) => {
   res.send("Backend Running Successfully");
@@ -55,6 +52,6 @@ Demo Class: ${DemoClass}
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
