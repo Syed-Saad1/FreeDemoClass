@@ -26,7 +26,6 @@ function App() {
       },
       body: JSON.stringify(data),
     });
-
     let res = await r.text();
 
     alert(res);
