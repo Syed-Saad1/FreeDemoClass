@@ -14,8 +14,9 @@ app.use(
     credentials: true,
   }),
 );
-
 app.use(express.json());
+
+app.options("*", cors());
 
 app.get("/", (req, res) => {
   res.send("Backend Running Successfully");
