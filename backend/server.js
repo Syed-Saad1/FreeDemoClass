@@ -3,8 +3,13 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 
 const app = express();
-const port = 3000;
-app.use(cors());
+const port = process.env.PORT || 3000;
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST"],
+  }),
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -12,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  const { StdName, FtrName, PH, DemoClass } = req.body;
+  const { StdName, FtrName, Age, PH, DemoClass } = req.body;
 
   try {
     const transporter = nodemailer.createTransport({
@@ -30,6 +35,7 @@ app.post("/", async (req, res) => {
       text: `
 Student Name: ${StdName}
 Father Name: ${FtrName}
+Age :${Age}
 Phone Number: ${PH}
 Demo Class: ${DemoClass}
       `,

@@ -19,7 +19,7 @@ function App() {
   };
   const onSubmit = async (data) => {
     await dealy(2);
-    let r = await fetch("freedemoclass-production.up.railway.app", {
+    let r = await fetch("https://freedemoclass-production.up.railway.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
