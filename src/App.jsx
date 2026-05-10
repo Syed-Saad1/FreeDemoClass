@@ -159,7 +159,7 @@ function App() {
               <input
                 className="w-full mt-1 px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
                 type="text"
-                name="Phone Number"
+                name="PH"
                 placeholder="03XXXXXXXXX"
                 {...register("PH", {
                   required: "Phone Number is Required",
@@ -184,7 +184,7 @@ function App() {
               <input
                 className="w-full mt-1 px-3 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
                 type="text"
-                name="Demo Class Course"
+                name="DemoClass"
                 placeholder="Enter Course Name"
                 {...register("DemoClass", {
                   required: "Course Name is Required",
