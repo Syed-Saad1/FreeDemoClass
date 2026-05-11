@@ -10,7 +10,6 @@ function App() {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  // ✅ FIXED SUBMIT FUNCTION (WORKING EMAIL)
   const onSubmit = async (data) => {
     try {
       const response = await fetch(
@@ -41,7 +40,7 @@ function App() {
     <div className="min-h-screen w-full bg-blue-200 flex justify-center items-center px-4 py-6">
       <div className="w-full max-w-md sm:max-w-lg bg-white p-6 rounded-2xl shadow-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* Header */}
+          {" "}
           <div className="flex items-center gap-3 mb-6">
             <img src={logo} className="h-16 w-16" alt="SFA Institute" />
             <div>
@@ -49,8 +48,6 @@ function App() {
               <p className="text-sm">Free Demo Class Registration</p>
             </div>
           </div>
-
-          {/* Student Name */}
           <div className="mb-4">
             <label className="font-semibold text-blue-600">Student Name</label>
             <input
@@ -63,8 +60,6 @@ function App() {
               <p className="text-red-500 text-sm">{errors.StdName.message}</p>
             )}
           </div>
-
-          {/* Father Name */}
           <div className="mb-4">
             <label className="font-semibold text-blue-600">Father Name</label>
             <input
@@ -77,8 +72,6 @@ function App() {
               <p className="text-red-500 text-sm">{errors.FtrName.message}</p>
             )}
           </div>
-
-          {/* Age */}
           <div className="mb-4">
             <label className="font-semibold text-blue-600">Age</label>
             <input
@@ -95,8 +88,6 @@ function App() {
               <p className="text-red-500 text-sm">{errors.Age.message}</p>
             )}
           </div>
-
-          {/* Phone */}
           <div className="mb-4">
             <label className="font-semibold text-blue-600">Phone Number</label>
             <input
@@ -115,8 +106,6 @@ function App() {
               <p className="text-red-500 text-sm">{errors.PH.message}</p>
             )}
           </div>
-
-          {/* Course */}
           <div className="mb-6">
             <label className="font-semibold text-blue-600">Course Name</label>
             <input
@@ -131,8 +120,6 @@ function App() {
               <p className="text-red-500 text-sm">{errors.DemoClass.message}</p>
             )}
           </div>
-
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}
